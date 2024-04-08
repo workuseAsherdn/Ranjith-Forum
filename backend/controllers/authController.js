@@ -46,6 +46,8 @@ const verify = async (req, res) => {
         );
     }
 
+    const DeleteVerifyUser = await verifyUser.findOneAndDelete({ email });
+
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
     const newUser = new verifyUser({
