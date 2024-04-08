@@ -139,7 +139,7 @@ const verify = async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        // sameSite: "None",
+
         secure: true, // Requires a secure (HTTPS) connection
       })
       .status(200)
@@ -195,7 +195,7 @@ const Register = async (req, res) => {
             res
               .cookie("token", token, {
                 httpOnly: true,
-                // sameSite: "None",
+
                 secure: true, // Requires a secure (HTTPS) connection
               })
               .status(200)
@@ -238,7 +238,7 @@ const Login = async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        // sameSite: "None",
+
         secure: true, // Requires a secure (HTTPS) connection
       })
       .status(200)
@@ -256,7 +256,7 @@ const Logout = async (req, res) => {
   res
     .cookie("token", "", {
       httpOnly: true,
-      // sameSite: "None",
+
       secure: true,
       expires: new Date(0),
     })
@@ -476,7 +476,7 @@ const ForgotPassword = async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        // sameSite: "None",
+
         secure: true,
 
         expires: new Date(Date.now() + 60 * 60 * 1000),
